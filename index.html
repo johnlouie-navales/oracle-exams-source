@@ -94,14 +94,35 @@
             <!-- No results -->
             <div v-if="filteredQuestions.length === 0 && search" class="text-center mt-8">
                 <p class="text-lg text-gray-400">No questions found matching "{{ search }}"</p>
-                <p class="text-sm text-gray-500 mt-2 opacity-75">Try searching with different keywords</p>
+                <p class="text-sm text-gray-500 mt-2 opacity-75">
+                    Hmm… no match here. Maybe your answer’s chilling at 
+                    <a 
+                        href="https://johnlouie-navales.github.io/oracle-source/"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center text-green-700 hover:text-green-500 hover:underline ml-1 group transition duration-300"
+                    >
+                        <span>Oracle Quizzes Source</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                            fill="none" 
+                            viewBox="0 0 24 24" 
+                            stroke-width="2" 
+                            stroke="currentColor"
+                            stroke-linecap="round" 
+                            stroke-linejoin="round" 
+                            class="h-4 w-4 ml-1 inline-block align-middle transition-transform duration-200 ease-in-out group-hover:-translate-y-0.5 group-hover:text-green-500">
+                            <path d="M13.5 6H19.5V12M19.5 6L9 16.5M6 6H4.5A1.5 1.5 0 003 7.5V19.5A1.5 1.5 0 004.5 21H16.5A1.5 1.5 0 0018 19.5V18" />
+                        </svg>
+                    </a>
+                    <span class="ml-1">👀</span>
+                </p>
             </div>
         </main>
 
         <!-- Footer -->
         <footer class="mt-12 py-6 border-t border-gray-700 text-center text-sm text-gray-400">
             <p>
-                Oracle Source © {{ currentYear }} • Built with 💖 
+                Oracle Source © {{ currentYear }} • All rights reserved.
             </p>
         </footer>
     </div>
