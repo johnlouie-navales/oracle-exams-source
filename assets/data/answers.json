@@ -2,7 +2,1128 @@
     "source": {
         "title": "Programming (Oracle Database) Exam",
         "questions": [
-
+            {
+                "question_text": "You want to display all the employee id and the month an employee was hired excluding employees whose job id is AD_VP. Which SQL statement give the required output?",
+                "choices": [
+                    {
+                        "text": "SELECT employee_id, hire_date, TO_MONTH(hire_date,'Month') AS \"Hired Month\", job_id FROM employees WHERE job_id NOT ('AD_VP');",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, hire_date, TO_CHAR(hire_date,'Month') AS \"Hired Month\", job_id FROM employees WHERE job_id NOT IN ('AD_VP');",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT employee_id, hire_date, MONTH(hire_date,'Month') AS \"Hired Month\", job_id  FROM employees WHERE job_id EXCLUDE ('AD_VP');",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, hire_date, TO_DATE(hire_date,'Month') AS \"Hired Month\", job_id FROM employees WHERE job_id NOT = 'AD_VP';",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "You want to generate the total salary per month of every department in the company.",
+                "choices": [
+                    {
+                        "text": "SELECT department_id, SUM(salary) FROM employees GROUP BY department_id",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT department_id, salary FROM employees ORDER BY SUM(salary)",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT department_id, salary FROM employees GROUP BY SUM(salary) ORDER BY department_id",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT department_id, TOTAL(salary) FROM employees GROUP BY department_id",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "Which of the following SQL command will display all records with part number contains the number 9?",
+                "choices": [
+                    {
+                        "text": "SELECT partnum FROM parts WHERE partnum = ‘%9%’",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT * FROM parts WHERE partnum IN ('%9%')",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT partnum FROM parts WHERE partnum BETWEEN = ‘%9%’",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT * from parts WHERE partnum LIKE '%9%'",
+                        "is_correct": true
+                    }
+                ]
+            },
+            {
+                "question_text": "You want to display the employee's last name whose salary is below 10,000.",
+                "question_subtext": "Which SQL statement give the required output format of the salary?",
+                "question_note": "Required output :",
+                "image": "assets/images/img.png",
+                "choices": [
+                    {
+                        "text": "SELECT last_name, TO_INTEGER(salary, $999,999.99) AS \"MONTHLY SALARY\" FROM employees WHERE salary < 10000",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT last_name, TO_NUMBER(salary, '$999,999.99') AS \"MONTHLY SALARY\" FROM employees WHERE salary < 10,000",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT last_name, TO_CHAR(salary, '$999,999.99') AS \"MONTHLY SALARY\" FROM employees WHERE salary < 10000",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT last_name, TO_INT(salary, '$999,999.99') AS \"MONTHLY SALARY\" FROM employees WHERE salary < 10,000",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "Which SQL statement give the required output format of the salary?",
+                "choices": [
+                    {
+                        "text": "SELECT last_name, hire_date FROM employees WHERE hire_date>= TO_DATE('Jan-2000', 'Month-YYYY') AND hire_date<= TO_DATE('Dec-2006', 'Month-‘YYYY') AND salary > 5,000;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT last_name, hire_date FROM employees WHERE hire_date>= TO_DATE('01-Jan-2000', 'DD-Mon-YYYYY') AND hire_date<= TO_DATE('31-Dec-2006', 'DD-Mon-YYYY') AND salary ABOVE 5000;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT last_name, hire_date FROM employees WHERE hire_date>= TO_DATE('2000', 'YYYY') AND hire_date<= TO_DATE('2006', 'YYYY') OR salary > 5000;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT last_name, hire_date FROM employees WHERE hire_date>= TO_DATE('01-Jan-2006', 'DD-Mon-RR') AND hire_date<= TO_DATE('31-Dec-2006', 'DD-Mon-RR') AND salary > 5000;",
+                        "is_correct": true
+                    }
+                ]
+            },
+            {
+                "question_text": "Ms. Ella what to generate the average salary of all employees whose job function is IT_PROG. ",
+                "question_subtext": "Which of the following SQL command will produce the output.",
+                "choices": [
+                    {
+                        "text": "SELECT AVG(salary) FROM employees WHERE job_id = 'IT_PROG';",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT AVERAGE(salary) FROM employees WHERE job_id = 'IT_PROG';",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT COUNT AVG(salary) FROM employees WHERE job_id = 'IT_PROG';",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT AVE(salary) FROM employees WHERE job_id = 'IT_PROG';",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "John want to know how many employees receiving salary below 10,000.",
+                "question_subtext": "What SQL command he need to run?",
+                "choices": [
+                    {
+                        "text": "SELECT COUNT(emp_id) FROM employees WHERE salary <= 10000;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT COUNT(*) FROM employees WHERE salary < 10000;",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT COUNT(salary) FROM employees WHERE salary < 10,000;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT salary FROM COUNT(employees)WHERE salary < 10000;",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "TRUE OR FALSE",
+                "question_subtext": "An owner has all the privileges on the object.",
+                "choices": [
+                    {
+                        "text": "True",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "False",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "What is the SQL command to count the number of records in the employees table?",
+                "choices": [
+                    {
+                        "text": "SELECT ALL FROM employees",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT SUM(*) FROM employees;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT * FROM employees;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT COUNT(*) FROM employees",
+                        "is_correct": true
+                    }
+                ]
+            },
+            {
+                "question_text": "Display employee's name and id whose firstname starts with letter D and job id is IT_PROG. ",
+                "question_subtext": "Sort the output by department.",
+                "choices": [
+                    {
+                        "text": "SELECT employee_id, first_name, last_name FROM employees ORDER BY department_id WHERE first_name LIKE 'D%' and job_id = 'IT_PROG'",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, first_name, last_name FROM employees WHERE job_id = 'IT_PROG' OR first_name LIKE 'D%' and ORDER BY department_id",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, first_name, last_name FROM employees WHERE first_name LIKE 'D%' and job_id = 'IT_PROG' ORDER BY department_id",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT employees FROM employee_id, first_name, last_name WHERE first_name LIKE ‘D%’ and job_id = ‘IT_PROG’ ORDER BY department_id",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "You want to display the employee id, date hired of all employees whose hired date is September.",
+                "question_subtext": "Which SQL statement give the required output?",
+                "image": "assets/images/img.png",
+                "choices": [
+                    {
+                        "text": "SELECT employee_id, hire_date, TO_CHAR(hire_date, 'Month') AS \"Hired Month\" FROM employees WHERE TO_DATE(hire_date, 'Month') = TO_DATE(‘09’)",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, hire_date, TO_CHAR(hire_date, 'Month') AS \"Hired Month\" FROM employees WHERE TO_CHAR(hire_date, 'Month') = TO_DATE('September')",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, hire_date, TO_CHAR(hire_date, 'Month') AS \"Hired Month\" FROM employees WHERE TO_CHAR(hire_date, 'MON') = 'SEP'",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT employee_id, hire_date, TO_DATE(hire_date, 'Month') AS \"Hired Month\" FROM employees WHERE TO_DATE(hire_date, 'MON') = 'SEP'",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "Display the employee id, salary, number of years and the hiring date of every employee in the company.",
+                "choices": [
+                    {
+                        "text": "SELECT employee_id, salary, hire_date, hire_date /365 FROM employees;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id,salary, hire_date, hire_date- SYSDATE /365 FROM employees;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, salary, hire_date, ROUND((SYSDATE - hire_date) /365,0) FROM employees;",
+                        "is_correct": true
+                    }
+                ]
+            },
+            {
+                "question_text": "List all employees except for IT_PROG job id.",
+                "choices": [
+                    {
+                        "text": "All of the choices",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT *FROM employees EXCEPT JOB_ID != 'IT_PROG'",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT *FROM employees WHERE JOB_ID NOT IN ('IT_PROG')",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT *FROM employees WHERE JOB_ID <> 'IT_PROG'",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "Display the warehouse number, class, highest price & lowest price, total on hand balance whose class is AP.",
+                "question_subtext": "Sort the output by warehouse number.",
+                "choices": [
+                    {
+                        "text": "SELECT warehouse, class, MAX(price), MIN(PRICE), sum(onhand) FROM parts WHERE class = 'AP' GROUP BY warehouse, class ORDER BY warehouse;",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT warehouse, class, MAX(price), MIN(PRICE), sum(onhand) FROM parts WHERE class = 'AP' GROUP BY warehouse, class, price ORDER BY warehouse, class",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT warehouse, class, MAX(price), MIN(PRICE), SUM(onhand) FROM parts GROUP BY warehouse, class ORDER BY warehouse; WHERE class = 'AP'",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT warehouse, class, HIGH(price), LOW(PRICE), SUM(onhand) FROM parts GROUP BY warehouse WHERE class = 'AP' ORDER BY warehouse, class;",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "You what to generate the average salary of all employees whose job function is FI_ACCOUNT. ",
+                "question_subtext": "Which of the following SQL command will produce the output.",
+                "choices": [
+                    {
+                        "text": "SELECT AVERAGE(salary) FROM employees WHERE job_id = 'FI_ACCOUNT';",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT AVE(salary) FROM employees WHERE job_id = 'FI_ACCOUNT';",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT COUNT AVG(salary) FROM employees WHERE job_id = 'FI_ACCOUNT';",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT AVG(salary) FROM employees WHERE job_id = 'FI_ACCOUNT';",
+                        "is_correct": true
+                    }
+                ]
+            },
+            {
+                "question_text": "Which of the following SELECT statement is the correctreport the will merge the column CLASS and PRICE rename the COLUMN as \"CLASS PRICE\".",
+                "choices": [
+                    {
+                        "text": "SELECT (CLASS||PRICE) AS \"CLASS PRICE\" FROM PARTS;",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT (CLASS||PRICE) AS CLASS PRICE FROM PARTS;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT ('CLASS'||'PRICE') AS \"CLASS PRICE\" FROM PARTS;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT (CLASS||PRICE) CLASS PRICE FROM PARTS;",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "The following are capabilities of SQL SELECT",
+                "choices": [
+                    {
+                        "text": "Create records, Remove Table, Edit record",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "Grant priveledge, Add user",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "Update, Delete, Add",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "Projection, Selection, Join records",
+                        "is_correct": true
+                    }
+                ]
+            },
+            {
+                "question_text": "You want to display the employee id and the year when an employee was hired.",
+                "question_subtext": "Which SQL statement give the required output?",
+                "choices": [
+                    {
+                        "text": "SELECT employee_id, TO_YEAR(hire_date,'YYYY') FROM employees;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, TO_CHAR(hire_date,'YYYY') FROM employees;",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT employee_id, YEAR(hire_date,'YYYY') FROM employees;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, YEAR(hire_date') FROM employees;",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "You want to display all the job position titles whose salary is salary from 5,000 to 12,000 arrange from highest to lowest",
+                "choices": [
+                    {
+                        "text": "SELECT job_title FROM employees WHERE salary >= 5000 AND salary <= 10000",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT job_title FROM jobs WHERE salary >= 5000 AND salary <= 10000",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT job_title FROM jobs WHERE min_salary >= 5000 AND max_salary<= 10000",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT employees_id, job_title FROM employees WHERE salary >= 5000 AND salary <= 10000",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "Which of the following is NOT a Data Manipulation Language?",
+                "choices": [
+                    {
+                        "text": "DELETE",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "CREATE",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "INSERT",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "UPDATE",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "Display the first 5 letter in the surname of all the employees whose firstname starts with letter 'N'",
+                "choices": [
+                    {
+                        "text": "SELECT SUBSTR(surname,1,5), first_name FROM employees WHERE first_name = 'N'",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT SUBSTR(surname,1,5), first_name FROM employees WHERE SUBSTR(first_name,1,1) IN 'N'",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT SUBSTR(last_name,1,5), first_name FROM employees WHERE SUBSTR(first_name,1,1) = 'N'",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT SUBSTR(last_name,1,5), first_name FROM employees WHERE SUBSTR(first_name,1,1) IN 'N'",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT SUBSTR(last_name,1,5), first_name FROM employees WHERE first_name IN 'N'",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "Display the employee's name, job title, job_id and the department name of employees with department id of 100.",
+                "choices": [
+                    {
+                        "text": "SELECT E.employee_id, J.job_title, e.job_id, D.department_name FROM jobs J NATURAL JOIN department D ON E.job_id = J.job_id NATURAL JOIN employees E ON E.department_id = D.department_id WHERE E.department_id = 100",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT E.employee_id, J.job_title, e.job_id, D.department_name FROM jobs J INNER JOIN department D ON E.job_id = J.job_id INNER JOIN employees EON E.department_id = D.department_id WHERE E.department_id = 100",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT E.employee_id, J.job_title, e.job_id, D.department_name FROM employees E JOIN jobs J ON E.job_id = J.job_id JOIN departments D ON E.department_id = D.department_id WHERE E.department_id = 100",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT E.employee_id, J.job_title, e.job_id, D.department_name FROM employees E JOIN department D ON E.job_id = J.job_id JOIN jobs J ON E.department_id = D.department_id WHERE E.department_id = 100",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "Which of the following SELECT statement is the correct report that will display the unique value for WAREHOUSE renames the column as \"No. of Available Warehouse\".",
+                "choices": [
+                    {
+                        "text": "SELECT DISTINCT WAREHOUSE AS \"No. of available warehouse\" FROM PARTS;",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT DISTINCT COLUMN WAREHOUSE AS \"No. of available warehouse\" FROM PARTS;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT DISTINCT 'WAREHOUSE AS' \"No. of available warehouse\" FROM PARTS;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT DISTINCT WAREHOUSE AS No. of available warehouse FROM PARTS;",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "You want to display the employee id and the month an employee was hired.",
+                "question_subtext": "Which SQL statement give the required output?",
+                "question_note": "Required output :",
+                "image": "assets/images/img.png",
+                "choices": [
+                    {
+                        "text": "SELECT employee_id, DATE(hire_date,'Month') AS 'Hired Month'FROM employees;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, TO_MONTH(hire_date,'Month') AS 'Hired Month'FROM employees;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, hire_date, MONTH(hire_date) AS \"Hired Month\" FROM employees;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, hire_date, TO_CHAR(hire_date,'Month') AS \"Hired Month\" FROM employees;",
+                        "is_correct": true
+                    }
+                ]
+            },
+            {
+                "question_text": "You want to display the employee's last name whose salary is below 10,000 and whose lastname starts with letter D.",
+                "question_subtext": "Which SQL statement give the required output format of the salary?",
+                "choices": [
+                    {
+                        "text": "SELECT last_name, TO_CHAR(salary, '$999,999.99') AS \"MONTHLY SALARY\" FROM employees WHERE salary < 10000 WHERE last_name LIKE 'D%'",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT last_name, TO_NUMBER(salary, '$999,999.99') AS \"MONTHLY SALARY\" FROM employees WHERE salary < 10,000 WHERE last_name = ‘D%’",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT last_name, TO_INT(salary, '$999,999.99') AS \"MONTHLY SALARY\" FROM employees WHERE salary < 10,000 WHERE last_name STARTS 'D%'",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT last_name, TO_INTEGER(salary, $999,999.99) AS \"MONTHLY SALARY\" FROM employees WHERE salary < 10000 WHERE last_name IN 'D%'",
+                        "is_correct": true
+                    }
+                ]
+            },
+            {
+                "question_text": "What will be the SQL command if every employee will be given a productivity bonus which is equivalent to 3% of the monthly salary?",
+                "question_subtext": "Display the employee id, salary and the productivity bonus.",
+                "choices": [
+                    {
+                        "text": "SELECT employee_id, salary FROM employees WHERE salary)",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, salary, salary * 1.03 FROM employees",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, salary, salary + (salary .03) FROM employees",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, salary, salary * .03 FROM employees",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT employee_id, salary, salary * .30 FROM employees",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "You want to display all the employee id and the month an employee was hired.",
+                "question_subtext": "Which SQL statement give the required output?",
+                "choices": [
+                    {
+                        "text": "SELECT employee_id, hire_date, TO_MONTH(hire_date,'Month') AS \"Hired Month\", job_id FROM employees",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, hire_date, TO_DATE(hire_date,'Month') AS \"Hired Month\", job_id FROM",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, hire_date, MONTH(hire_date,'Month') AS \"Hired Month\", job_id FROM employees",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, hire_date, TO_CHAR(hire_date,'Month') AS \"Hired Month\", job_id FROM employees",
+                        "is_correct": true
+                    }
+                ]
+            },
+            {
+                "question_text": "Which of the following SQL commands will display all the stocks on hand from 10 to 30?",
+                "choices": [
+                    {
+                        "text": "SELECT * FROM parts WHERE onhand BETWEEN 10 to 30;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT * FROM parts WHERE onhand BETWEEN 10 AND 30;",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT * FROM parts WHERE BETWEEN onhand>=10 to onhand<=30;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT * FROM parts WHERE BETWEEN onhand = 10 AND onhand = 30;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT * FROM onhand WHERE parts BETWEEN onhand = 10 AND onhand = 30;",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "Display the name, jobs id and salary of the all the employees whose department id is 100 and salary is below 8000. Arrange the output by salary in ascending order.",
+                "choices": [
+                    {
+                        "text": "SELECT first_name, last_name, salary FROM employees WHERE salary < 8000 AND department_id = 100 AND ORDER BY department_id",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employees FROM first_name, last_name, salary WHERE department_id = 100 AND salary < 8000 ORDER BY salary ASC",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT name, salary FROM employees WHERE department_id = 100 AND salary < 8000 ORDER BY salary ASC",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT first_name, last_name, salary FROM employees ORDER BY salary WHERE department_id = 100 AND salary > 8000",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT first_name, last_name, salary FROM employees WHERE department_id = 100 AND salary < 8000 ORDER BY salary",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT name FROM employees WHERE salary < 8000 AND department_id = 100 AND ORDER BY department_id",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "Every employee will get a bonus of 150% of his/her current salary. Display the employee id, salary and the bonus of every employee. Label the computed bonus with Bonus",
+                "choices": [
+                    {
+                        "text": "SELECT employee_id, salary, salary * 150% AS \"Bonus\" FROM employees",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, salary, salary * 150 AS \"Bonus\" FROM employees",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, salary, salary * 1.5 AS Bonus FROM employees",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT employee_id, salary, salary * 1.50% AS Bonus FROM employees",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "What will be the output of the following SQL?",
+                "question_subtext": "SELECT * FROM parts WHERE (warehouse = 1 or warehouse = 2) AND class IN ('HW', 'AP') AND (price > 200 AND price < 500);",
+                "choices": [
+                    {
+                        "text": "Invalid SQL command",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "7 rows returned",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "Error",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "2 rows returned",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "0 rows returned",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "In creating Joins,the NATURALJOIN and USING clauses are____________",
+                "choices": [
+                    {
+                        "text": "Opposite",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "Mutually Exclusive",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "Limited to 2 relational tables",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "Mutually Inclusive",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "The General Manager request to the Database Administrator to generate the total number of parts and total outstanding balance on hand of every class in warehouse number 1&2.",
+                "question_subtext": "Which of the following SQL command will generate the required output.",
+                "choices": [
+                    {
+                        "text": "SELECT warehouse, class, COUNT(partnum), SUM(onhand) FROM parts GROUP BY warehouse,class HAVING warehouse = 1 OR warehouse = 2;",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT warehouse, class, count(partnum), sum(onhand) GROUP BY warehouse,class HAVING warehouse = 1 or warehouse = 2 FROM parts;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT warehouse, class, count(partnum), sum(onhand) GROUP BY warehouse,class WHERE warehouse = 1 or warehouse = 2 FROM parts;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT warehouse, class, SUM(partnum), SUM(onhand) FROM parts GROUP BY warehouse,class HAVING warehouse = 1 AND warehouse = 2;",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "There was 10% price increase in the all the parts in warehouse number 3. The Store Manager asked the Database Administrator to generate a report showing the part number, the old and new price.",
+                "question_subtext": "Which of the following SQL statement would satisfy the requirement of the Store Manager.",
+                "choices": [
+                    {
+                        "text": "SELECT partnum, price, price * 1.1 FROM parts WHERE warehouse = 3",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT partnum, price, price * 10% FROM parts WHERE warehouse = 3",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT partnum, price, price * 0.1 FROM parts WHERE warehouse = 3",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT partnum, price, price * 1.10% FROM parts WHERE warehouse = 3",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "Display the part number whose class is not HW, AG or SG.",
+                "choices": [
+                    {
+                        "text": "SELECT partnum FROM parts WHERE class NOT IN = (‘HW’, AG’, SG’)",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "None of the choices",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT partnum FROM parts WHERE NOT IN class ('HW', 'AG', SG')",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT partnum FROM parts WHERE class NOT IN ('HW', 'AG', SG')",
+                        "is_correct": true
+                    }
+                ]
+            },
+            {
+                "question_text": "Display the total number of characters of the last name of all the employees.",
+                "choices": [
+                    {
+                        "text": "SELECT TOTALCHAR(last_name),LAST_NAME FROM EMPLOYEES;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT TOTAL(last_name) FROM employees",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT LEN(last_name) FROM employees;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT LENGTH(last_name) FROM employees;",
+                        "is_correct": true
+                    }
+                ]
+            },
+            {
+                "question_text": "You want to display the employee's last name hired from year 2000 to 2002.",
+                "question_subtext": "Which SQL statement give the required output?",
+                "choices": [
+                    {
+                        "text": "SELECT last_name, hire_date FROM employees WHERE hire_date>= TO_DATE('01-Jan-2000', 'DD-Mon-RR') AND hire_date<= TO_DATE('31-Dec-2002', 'DD-Mon-RR')",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT last_name, hire_date FROM employees WHERE hire_date>= TO_DATE('01-Jan-2000', 'DD-Mon-YYYYY') AND hire_date<= TO_DATE('31-Dec-2002', 'DD-Mon-YYYY')",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT last_name, hire_date FROM employees WHERE hire_date>= TO_DATE('2000', 'YYYY') AND hire_date<= TO_DATE('2002', 'YYYY')",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT last_name, hire_date FROM employees WHERE hire_date>= TO_DATE('Jan-2000', 'Month-YYYY') AND hire_date<= TO_DATE('Dec-2002', 'Month-‘YYYY')",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "You want to display the employee's last name and date hired in year 2000 to2006 whose salary is above 5000. Which SQL statement give the required output?",
+                "choices": [
+                    {
+                        "text": "SELECT last_name, hire_date FROM employees WHERE hire_date>= TO_DATE('Jan-2000', 'Month-YYYY') AND hire_date<= TO_DATE('Dec-2006', 'Month-‘YYYY') AND salary > 5,000;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT last_name, hire_date FROM employees WHERE hire_date>= TO_DATE('01-Jan-2006', 'DD-Mon-RR') AND hire_date<= TO_DATE('31-Dec-2006', 'DD-Mon-RR') AND salary > 5000;",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT last_name, hire_date FROM employees WHERE hire_date>= TO_DATE('01-Jan-2000', 'DD-Mon-YYYYY') AND hire_date<= TO_DATE('31-Dec-2006', 'DD-Mon-YYYY') AND salary ABOVE 5000;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT last_name, hire_date FROM employees WHERE hire_date>= TO_DATE('2000', 'YYYY') AND hire_date<= TO_DATE('2006', 'YYYY') OR salary > 5000;",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "You want to display the employee’s last name whose salary is below 10,000 and whose lastname starts with letter K.",
+                "question_subtext": "Which SQL statement give the required output format of the salary? ",
+                "choices": [
+                    {
+                        "text": "SELECT last_name, TO_INTEGER(salary, $999,999.99) AS \"MONTHLY SALARY\" FROM employees WHERE salary < 10000 WHERE last_name IN 'K%'",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT last_name, TO_CHAR(salary, '$999,999.99') AS \"MONTHLY SALARY\" FROM employees WHERE salary < 10000WHERE last_name LIKE ‘K%’",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT last_name, TO_INT(salary, '$999,999.99') AS \"MONTHLY SALARY\" FROM employees WHERE salary < 10,000 WHERE last_name STARTS 'K%'",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT last_name, TO_NUMBER(salary, '$999,999.99') AS \"MONTHLY SALARY\" FROM employees WHERE salary < 10,000WHERE last_name = ‘K%’",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "You want to display the employee's id and formatted date hired as shown below.",
+                "question_subtext": "Which SQL statement give the required output?",
+                "question_note": "Required output :",
+                "image": "assets/images/img.png",
+                "choices": [
+                    {
+                        "text": "SELECT employee_id, TO_CHAR(hire_date, 'Month DD, YYYY') AS \"Hired Date\" FROM employees;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, TO_CHAR(hire_date, 'fmMonth DD, YYYY') AS \"Hired Date\" FROM employees;",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT employee_id, TO_DATE (hire_date, 'format Month DD, YYYY') AS \"Hired Date\" FROM employees;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT employee_id, format(TO_DATE(hire_date, 'Month DD, YYYY')) AS \"Hired Date\" FROM employees;",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "Which of the following is an Oracle Proprietary Commands",
+                "choices": [
+                    {
+                        "text": "SQL *Plus",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SQL",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "ANSI SQL",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "MySQL Plus",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "The General Manager request to the Database Administrator to generate the total salary per month of every department in the company.",
+                "choices": [
+                    {
+                        "text": "SELECT department_id, salary FROM employees ORDER BY SUM(salary)",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT department_id, salary FROM employees GROUP BY SUM(salary) ORDER BY department_id",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT department_id, TOTAL(salary) FROM employees GROUP BY department_id",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT department_id, SUM(salary) FROM employees GROUP BY department_id",
+                        "is_correct": true
+                    }
+                ]
+            },
+            {
+                "question_text": "John want to know how many part items are there in warehouse number 3.",
+                "question_subtext": "What SQL command he need to run?",
+                "choices": [
+                    {
+                        "text": "SELECT partnum FROM COUNT(parts)WHERE warehouse = 3;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT ALL FROM COUNT(parts) WHERE warehouse = 3;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT COUNT(*) FROM parts WHERE warehouse = 3;",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT * FROM COUNT(parts) WHERE warehouse = 3;",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "True or False. The AND, OR, NOT are comparison operators.",
+                "choices": [
+                    {
+                        "text": "True",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "False",
+                        "is_correct": true
+                    }
+                ]
+            },
+            {
+                "question_text": "You want to display the employee's last name and date hired in year 2002 whose salary is above 5000.",
+                "question_subtext": "Which SQL statement give the required output?",
+                "choices": [
+                    {
+                        "text": "SELECT last_name, hire_date FROM employees WHERE hire_date >= TO_DATE('01-Jan-2000', 'DD-Mon-YYYYY') AND hire_date <= TO_DATE('31-Dec-2002', 'DD-Mon-YYYY')AND salary ABOVE 5000;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT last_name, hire_date FROM employees WHERE hire_date >= TO_DATE('Jan-2000', 'Month-YYYY') AND hire_date <= TO_DATE('Dec-2002', 'Month-‘YYYY') AND salary > 5,000;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT last_name, hire_date FROM employees WHERE hire_date >= TO_DATE('2000', 'YYYY') AND hire_date <= TO_DATE('2002', 'YYYY') OR salary > 5000;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT last_name, hire_date FROM employees WHERE hire_date >= TO_DATE('01-Jan-2002', 'DD-Mon-RR') AND hire_date <= TO_DATE('31-Dec-2002', 'DD-Mon-RR') AND salary > 5000;",
+                        "is_correct": true
+                    }
+                ]
+            },
+            {
+                "question_text": "Display the lastname of every employee in the company. Display the output in a single column and label it as Fullname",
+                "question_subtext": "Format: JuanReyes",
+                "choices": [
+                    {
+                        "text": "SELECT CONCATENATE(first_name, last_name) AS Fullname FROM employees",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "None of the choices",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT CONCAT(first_name, last_name) AS Fullname FROM employees",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT CONCAT(first_name, last_name) FROM employees",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "You can relate data to multiple tables using a foreign key.",
+                "choices": [
+                    {
+                        "text": "True",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "False",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "Which of the following SELECT statement is the correctreport that will combine the column PARTNUM and DESCRIPTION put a literal character string \"belongs to\" in between the two columns then rename the column as \"NUMBER TITLE\". Note put space before and after the character literal string to avoid no spaces in the report.",
+                "choices": [
+                    {
+                        "text": "SELECT (PARTNUM||' THAT BELONGS TO '||DESCRIPTION) AS NUMBER TITLE FROM PARTS;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT (PARTNUM|| THAT BELONGS TO ||DESCRIPTION) AS \"NUMBER TITLE\" FROM PARTS;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT (PARTNUM||' THAT BELONGS TO '||DESCRIPTION) AS \"NUMBER TITLE\" FROM PARTS;",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT (;PARTNUM'||' THAT BELONGS TO '||'DESCRIPTION;) AS \"NUMBER TITLE\" FROM PARTS;",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "John want to know how many employees receiving salary below 10,000. What SQL command he need to run?",
+                "choices": [
+                    {
+                        "text": "SELECT salary FROM COUNT(employees)WHERE salary < 10000;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT COUNT(*) FROM employees WHERE salary < 10000;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT COUNT(emp_id) FROM employees WHERE salary <= 10000;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT COUNT(salary) FROM employees WHERE salary < 10,000;",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "Which of the following SELECT statement is the correct PL/SQL that will display eliminate the duplicate rows for column class and warehouse.",
+                "choices": [
+                    {
+                        "text": "SELECT DISTINCT CLASS AND WAREHOUSE FROM PARTS;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT DISTINCT CLASS, DISTINCT WAREHOUSE FROM PARTS;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT DISTINCT CLASS AND DISTINCT WAREHOUSE FROM PARTS;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT DISTINCT CLASS, WAREHOUSE FROM PARTS;",
+                        "is_correct": true
+                    }
+                ]
+            },
+            {
+                "question_text": "Which of the following SELECT statement is the correct PL/SQL that willcreate a report specifying only the column PRICE, ONHAND and DESCRIPTION?",
+                "choices": [
+                    {
+                        "text": "SELECTONHAND,PRICE DESCRIPTION FROM PARTS ORDER BY ONHAND;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECTONHAND,PRICE ,DESCRIPTION FROM PARTS;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT PRICE, ONHAND, DESCRIPTION FROM PARTS;",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT (ONHAND||PRICE ||DESCRIPTION FROM PARTS;",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "Which of the following SELECT statement is the correct report that will deduct 5 from ONHAND, multiply 5 in WAREHOUSE, after getting the value on both ONHAND and WAREHOUSE add their data: as shown below: ONHAND - 5 + 5 * WAREHOUSE",
+                "question_subtext": "Note that you have to force the Oracle to prioritize first the Subtraction over Multiplication. List only the column DESCRIPTION, ONHAND and WAREHOUSE.",
+                "choices": [
+                    {
+                        "text": "SELECT (ONHAND-5) + 5 * WAREHOUSE, DESCRIPTION FROM PARTS;",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SELECT ONHAND-5 + 5 (* WAREHOUSE), DESCRIPTION FROM PARTS;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT ONHAND-5 + 5 * WAREHOUSE, DESCRIPTION FROM PARTS;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SELECT (ONHAND-5) + 5(* WAREHOUSE), DESCRIPTION FROM PARTS;",
+                        "is_correct": false
+                    }
+                ]
+            }
         ]
     }
 }

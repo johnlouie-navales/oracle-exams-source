@@ -36,14 +36,6 @@
                         {{ question.question_text }}
                     </h2>
 
-                    <!-- Image -->
-                    <img 
-                        v-if="question.image" 
-                        :src="question.image" 
-                        alt="Question image" 
-                        class="my-4 rounded-lg max-h-64 object-contain"
-                    >
-
                     <!-- Sub-question -->
                     <h3 
                         v-if="question.question_subtext" 
@@ -55,10 +47,18 @@
                     <!-- Note -->
                     <p 
                         v-if="question.question_note" 
-                        class="pl-5 text-base text-gray-400 mb-4"
+                        class="text-base text-gray-400 mb-4"
                     >
                         {{ question.question_note }}
                     </p>
+
+                    <!-- Image -->
+                    <img 
+                        v-if="question.image" 
+                        :src="question.image" 
+                        alt="Question image" 
+                        class="my-4 rounded-lg max-h-64 object-contain"
+                    >
 
                     <!-- Choices -->
                     <ul class="space-y-2">
