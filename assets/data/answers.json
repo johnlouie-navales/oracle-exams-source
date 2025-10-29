@@ -1048,7 +1048,7 @@
                     },
                     {
                         "text": "SELECT COUNT(*) FROM employees WHERE salary < 10000;",
-                        "is_correct": false
+                        "is_correct": true
                     },
                     {
                         "text": "SELECT COUNT(emp_id) FROM employees WHERE salary <= 10000;",
@@ -1120,6 +1120,300 @@
                     },
                     {
                         "text": "SELECT (ONHAND-5) + 5(* WAREHOUSE), DESCRIPTION FROM PARTS;",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "You can use this procedure to issue user-defined error messages from stored subprograms.",
+                "choices": [
+                    {
+                        "text": "SUB_ROUTINE",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "CALL_FUNCTION",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "RAISE_APPLICATION_ERROR",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "USER_DEFINED_PROC",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "PROCEDURE",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "What is the last clause in trapping exceptions?",
+                "choices": [
+                    {
+                        "text": "THEN",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "CONFIRM",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "OTHERWISE",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "WHEN OTHERS",
+                        "is_correct": true
+                    }
+                ]
+            },
+            {
+                "question_text": "Which of the following DOES NOT describes an exception?",
+                "choices": [
+                    {
+                        "text": "An exception can be handled by trapping it with a handler",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "An exception can be raised implicitly by the Oracle server",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "Exception is a PL/SQL error that is raised before program execution.",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "An exception can be raisedexplicitly by the program",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "None of the choices",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "When an exception is user defined, the exception is raised ____________ .",
+                "choices": [
+                    {
+                        "text": "Interactively",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "Exclusively",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "None of the choices",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "Implicitly",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "Explicitly",
+                        "is_correct": true
+                    }
+                ]
+            },
+            {
+                "question_text": "Which of the following syntax to declare EXCEPTION named e_invalid_id?",
+                "choices": [
+                    {
+                        "text": "e_invalid_id EXCEPTION;",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "EXCEPTION e_invalid_id;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "e_invalid_id AS EXCEPTION;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "CREATE e_invalid_id EXCEPTION;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "None of the choices",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "Which of the folllowing is TRUE?",
+                "choices": [
+                    {
+                        "text": "None of the choices",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "You can embed procedural construct within SQL code",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SQL code are embedded within PL/SQL statements",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "PL/SQL statements are embedded within SQL code.",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "You can trap any error by including a corresponding handler within the exception-handling section of the PL/SQL block.",
+                "choices": [
+                    {
+                        "text": "True",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "False",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "What is the exception name when PL/SQL has an internal problem",
+                "choices": [
+                    {
+                        "text": "PROGRAM_ERROR",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "ERROR_MSG",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "RUNTIME_ERROR",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "EXECUTION_ERROR",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "What is the exception name when single row SELECT returned no data.",
+                "choices": [
+                    {
+                        "text": "END_OF_DATA",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "NO_DATA_FOUND",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "NO_RECORDS_FOUND",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "ZERO_RECORDS_FOUND",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "You have been tasked to update the database by creating a PL/SQL to increase the salary of all IT Programmer employees by 100% of their existing salary. Which of the following will execute successfully?",
+                "choices": [
+                    {
+                        "text": "DECLARE v_job_id employees.job_id%TYPE := 'IT_PROG'; v_salary employees.salary := salary; BEGIN UPDATE employees SET salary = v_salary * 0.100% WHERE job_id = v_job_id; END;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "DECLARE v_job_id employees.job_id%TYPE := 'IT_PROG'; v_salary employees.salary := salary; BEGIN UPDATE employees SET v_salary = salary * 1.00 WHERE v_job_id = job_id; END;",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "DECLARE v_job_id employees.job_id%TYPE := 'IT_PROG'; BEGIN UPDATE employees SET salary = salary * 2 WHERE job_id = v_job_id; END;",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "DECLARE v_job_id employees.job_id%TYPE := 'IT_PROG'; BEGIN UPDATE employees SET salary = salary * 100% WHERE job_id = v_job_id; END;",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "When an exception is predefined by Oracle server, the exception is raised ____________ .",
+                "choices": [
+                    {
+                        "text": "None of the choices",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "Interactively",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "Exclusively",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "Implicitly",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "Explicitly",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "Note: I ran out of attempts, so I’m not sure about the correct answer. Please pick the possible answer and let me know if it’s correct so I can update it. Thanks!",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "In the DECLARE section of the PL/SQL block,",
+                "choices": [
+                    {
+                        "text": "Actions are performed when error occurs",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "SQL statements are being executed",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "All of the choices",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "You define variables.",
+                        "is_correct": false
+                    },
+                    
+                    {
+                        "text": "Note: I ran out of attempts, so I’m not sure about the correct answer. Please pick the possible answer and let me know if it’s correct so I can update it. Thanks!",
+                        "is_correct": false
+                    }
+                ]
+            },
+            {
+                "question_text": "What is the error trapping function that returns the numeric value of the error code?",
+                "choices": [
+                    {
+                        "text": "SQLCODE",
+                        "is_correct": true
+                    },
+                    {
+                        "text": "ERROR_CODE",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "ERRORCODE",
+                        "is_correct": false
+                    },
+                    {
+                        "text": "SQL_ERRORCODE",
                         "is_correct": false
                     }
                 ]
